@@ -17,8 +17,9 @@ public class GuessNum {
         {
             System.out.println("Ваше число меньше");
             return false;
-        } else
-        System.out.println("Поздравляю вы выиграли!");
+        } else {
+            System.out.println("Поздравляю вы выиграли!");
+        }
         return true;
     }
 

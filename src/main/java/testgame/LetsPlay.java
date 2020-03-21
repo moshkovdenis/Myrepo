@@ -1,10 +1,8 @@
 package testgame;
 
-import java.util.Scanner;
 
 public class LetsPlay {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Добрый день !");
         String userName = "";
         do {
@@ -16,7 +14,7 @@ public class LetsPlay {
             System.out.println("----------------------");
             System.out.println("Введите название игры");
 
-            Games.ChoseGame();
+            Games.choseGame();
         } while (true);
 
     }
