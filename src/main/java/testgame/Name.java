@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Name {
     public static boolean checkName(String name){
-        if (name.matches(".*\\d/*"))
+        if (name.matches(".*\\d.*"))
         {
             System.out.println("Введите имя без чисел");
             return false;
