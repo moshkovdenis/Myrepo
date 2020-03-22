@@ -16,6 +16,7 @@ public class Games {
                 num = GuessNum.entryNum();
             } while (!GuessNum.checkNum(num));
         } else if (chose.equals("Загадать число")) {
+            System.out.println("Для выхода введите \"выйти\"");
             System.out.println("Загадайте число от 0 до 100 ");
             System.out.println("Как будете готовы напишите \"загадал\"");
             String riddl = sc.nextLine();
