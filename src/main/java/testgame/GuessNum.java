@@ -9,9 +9,6 @@ public class GuessNum {
     private static int a = random.nextInt(100);
 
     public static boolean checkNum(int num){
-        if(Integer.toString(num).equals("выйти")){
-            Exit.exitGames();
-        }
         if (num > a)
         {
             System.out.println("Ваше число больше");
