@@ -1,13 +1,17 @@
 package testgame;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNum {
-    static Random random = new Random();
-    static int a = random.nextInt(100);
+    private static Random random = new Random();
+    private static int a = random.nextInt(100);
 
     public static boolean checkNum(int num){
+        if(Integer.toString(num).equals("выйти")){
+            Exit.exitGames();
+        }
         if (num > a)
         {
             System.out.println("Ваше число больше");
@@ -24,9 +28,12 @@ public class GuessNum {
     }
 
     public static int entryNum(){
-        System.out.println("Введите число");
+        try {
+            System.out.println("Введите число");
+            return new Scanner(System.in).nextInt();
+        }catch (InputMismatchException e) {
+            System.out.println("нужно ввести число");
+        }
         return new Scanner(System.in).nextInt();
     }
-
-
 }

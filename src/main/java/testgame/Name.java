@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Name {
     public static boolean checkName(String name){
+        if(name.equals("выйти")) {
+            Exit.exitGames();
+        }
         if (name.matches(".*\\d.*"))
         {
             System.out.println("Введите имя без чисел");
@@ -14,13 +17,13 @@ public class Name {
             System.out.println("Введите только имя");
             return false;
         }
-        else
-            System.out.println("Добро пожаловать " + name.substring(0,1).toUpperCase() + name.substring(1));
-        return true;
+        else {
+            System.out.println("Добро пожаловать " + name.substring(0, 1).toUpperCase() + name.substring(1));
+            return true;
+        }
     }
 
     public static String entryName() {
-        System.out.println("Введите своё имя:");
         return new Scanner(System.in).nextLine();
     }
 }

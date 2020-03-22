@@ -13,22 +13,28 @@ public class RiddleNum {
         int resNum = rnd.nextInt(max - min) + min;
         System.out.println(resNum);
         while (true) {
-            String input = sc.nextLine();
-            if (input.equals("меньше")) {
-                max = resNum;
-                resNum = rnd.nextInt(max - min) + min;
-                System.out.println(resNum);
-            } else if (input.equals("больше")) {
-                min = resNum + 1;
-                resNum = rnd.nextInt(max - min) + min;
-                System.out.println(resNum);
-            } else if (input.equals("правильно")) {
-                System.out.println("Система победила! Спасибо за игру человек.");
+            try {
+                String input = sc.nextLine();
+                if (input.equals("меньше")) {
+                    max = resNum;
+                    resNum = rnd.nextInt(max - min) + min;
+                    System.out.println(resNum);
+                } else if (input.equals("больше")) {
+                    min = resNum + 1;
+                    resNum = rnd.nextInt(max - min) + min;
+                    System.out.println(resNum);
+                } else if (input.equals("правильно")) {
+                    System.out.println("Система победила! Спасибо за игру человек.");
+                    return true;
+                } else if (input.equals("выйти")) {
+                    Exit.exitGames();
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("не обманывай меня!");
                 return true;
             }
 
         }
-
     }
 }
 

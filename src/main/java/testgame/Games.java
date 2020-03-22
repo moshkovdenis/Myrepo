@@ -7,8 +7,7 @@ public class Games {
         Scanner sc = new Scanner(System.in);
         String chose = sc.nextLine();
         if (chose.equals("выйти")){
-            System.out.println("Спасибо за игру");
-            System.exit(0);
+            Exit.exitGames();
         }
         if (chose.equals("Угадать число")) {
             int num = 0;
