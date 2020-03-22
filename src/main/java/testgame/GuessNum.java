@@ -9,6 +9,10 @@ public class GuessNum {
     static int a = random.nextInt(100);
 
     public static boolean checkNum(int num){
+        if (num == 0) {
+            System.out.println("Спасибо за игру!");
+            return true;
+        }
         if (num > a)
         {
             System.out.println("Ваше число больше");
@@ -24,12 +28,13 @@ public class GuessNum {
     }
 
     public static int entryNum() {
+        System.out.println("если хотите выйти введите 0");
         try {
-            System.out.println("Введите число");
+            System.out.println("Введите число:");
             return new Scanner(System.in).nextInt();
         } catch (InputMismatchException e) {
-            System.out.println("нужно ввести число");
-            return new Scanner(System.in).nextInt();
+            System.out.println("нужно ввести число!");
+            return entryNum();
         }
     }
 }

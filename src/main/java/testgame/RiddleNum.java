@@ -11,13 +11,13 @@ public class RiddleNum {
         int min = 0;
         int max = 100;
         int resNum = rnd.nextInt(max - min) + min;
+        System.out.println("Для выхода введите \"выйти\"");
         System.out.println(resNum);
         while (true) {
             try {
                 String input = sc.nextLine();
                 if(input.equals("выйти")){
-                    System.out.println("Спасибо за игру!");
-                    System.exit(0);
+                    return true;
                 }
                 if (input.equals("меньше")) {
                     max = resNum;
@@ -32,8 +32,8 @@ public class RiddleNum {
                     return true;
                 }
             } catch (IllegalArgumentException e) {
-                System.out.println("Обманывать плохо,прощай...");
-                System.exit(0);
+                System.out.println("Обманывать плохо,попробуем снова!");
+                return programGuess();
             }
 
         }

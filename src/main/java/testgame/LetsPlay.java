@@ -10,6 +10,7 @@ public class LetsPlay {
         System.out.println("Предлагаю вам сыграть в две игры");
         do {
             System.out.println("Выберите игру: \"Угадать число\" или \"Загадать число\"");
+            System.out.println("Для выхода введите \"выйти\"");
             System.out.println("----------------------");
             System.out.println("Введите название игры");
             Games.choseGame();
