@@ -3,7 +3,7 @@ package testgame;
 import java.util.Random;
 import java.util.Scanner;
 
-public class riddleNum {
+public class RiddleNum {
 
     public static boolean programGuess() {
         Scanner sc = new Scanner(System.in);
@@ -12,8 +12,13 @@ public class riddleNum {
         int max = 100;
         int resNum = rnd.nextInt(max - min) + min;
         System.out.println(resNum);
-            while (true) {
+        while (true) {
+            try {
                 String input = sc.nextLine();
+                if(input.equals("выйти")){
+                    System.out.println("Спасибо за игру!");
+                    System.exit(0);
+                }
                 if (input.equals("меньше")) {
                     max = resNum;
                     resNum = rnd.nextInt(max - min) + min;
@@ -26,9 +31,12 @@ public class riddleNum {
                     System.out.println("Система победила! Спасибо за игру человек.");
                     return true;
                 }
-
+            } catch (IllegalArgumentException e) {
+                System.out.println("Обманывать плохо,прощай...");
+                System.exit(0);
             }
 
         }
     }
+}
 
