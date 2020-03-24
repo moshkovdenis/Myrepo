@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class RiddleNum {
     private static int min = 0;
     private static int max = 100;
+
     public static boolean programGuess() {
         Scanner sc = new Scanner(System.in);
         Random rnd = new Random();

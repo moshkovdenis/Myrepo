@@ -5,31 +5,29 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNum {
-    static Random random = new Random();
-    static int a = random.nextInt(100);
+    private static Random random = new Random();
+    private static int a = random.nextInt(100);
 
-
-
-    public static boolean checkNum(int num){
-        System.out.println("если хотите выйти введите 0");
-        System.out.println();
-        if (num == 0) {
-            System.out.println("Спасибо за игру!");
+    public static boolean checkNum(int num) {
+        while (true) {
+            System.out.println("если хотите выйти введите 0");
+            if (num == 0) {
+                System.out.println("Спасибо за игру!");
+                return true;
+            }
+            if (num > a) {
+                System.out.println("Ваше число больше");
+                return false;
+            } else if (num < a) {
+                System.out.println("Ваше число меньше");
+                return false;
+            } else
+                System.out.println("Поздравляю вы выиграли!");
+            a = random.nextInt(100);
             return true;
         }
-        if (num > a)
-        {
-            System.out.println("Ваше число больше");
-            return false;
-        }
-        else if(num < a)
-        {
-            System.out.println("Ваше число меньше");
-            return false;
-        } else
-            System.out.println("Поздравляю вы выиграли!");
-        return true;
     }
+
 
     public static int entryNum() {
         try {
@@ -40,4 +38,5 @@ public class GuessNum {
             return entryNum();
         }
     }
+
 }
