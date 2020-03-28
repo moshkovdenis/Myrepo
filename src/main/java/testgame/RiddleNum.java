@@ -4,10 +4,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RiddleNum {
-    private static  int min = 0;
-    private static  int max = 100;
+    private static final int MIN = 0;
+    private static final int MAX = 100;
 
     public static boolean programGuess() {
+        int min = MIN;
+        int max = MAX;
         Scanner sc = new Scanner(System.in);
         Random rnd = new Random();
         int resNum = rnd.nextInt(max - min) + min;
@@ -29,14 +31,10 @@ public class RiddleNum {
                     resNum = rnd.nextInt(max - min) + min;
                 } else if (input.equalsIgnoreCase("правильно")) {
                     System.out.println("Система победила! Спасибо за игру человек.");
-                    min = 0;
-                    max = 100;
                     return true;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("Обманывать плохо, твоё число " + resNum);
-                min = 0;
-                max = 100;
                 return true;
             }
         }
