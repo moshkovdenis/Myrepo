@@ -27,8 +27,6 @@ public class GuessNum {
         return true;
     }
 
-
-
     public static int entryNum() {
         try {
             System.out.println("Введите число: от 0 до 100");
