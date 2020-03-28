@@ -9,7 +9,6 @@ public class GuessNum {
     private static int a = random.nextInt(100);
 
     public static boolean checkNum(int num) {
-
         System.out.println("если хотите выйти введите 0");
         if (num == 0) {
             System.out.println("Спасибо за игру!");
@@ -39,5 +38,4 @@ public class GuessNum {
             return entryNum();
         }
     }
-
 }

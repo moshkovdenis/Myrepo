@@ -28,7 +28,6 @@ public class Games {
         }
     }
 
-
     public static void playTheGames () {
         System.out.println("Предлагаю вам сыграть в две игры");
         do {
@@ -39,6 +38,5 @@ public class Games {
             choseGame();
         } while (true);
     }
-
 }
 
