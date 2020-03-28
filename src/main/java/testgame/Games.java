@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Games {
     private static int num = 0;
     private static Scanner sc = new Scanner(System.in);
+    private static String word = "";
 
     public static void choseGame() {
         String chose = sc.nextLine();
@@ -17,16 +18,16 @@ public class Games {
                 num = GuessNum.entryNum();
             } while (!GuessNum.checkNum(num));
         } else if (chose.equalsIgnoreCase("Загадать число")) {
-            System.out.println("Для выхода введите \"выйти\"");
-            System.out.println("Загадайте число от 0 до 100 ");
-            System.out.println("Как будете готовы напишите \"загадал\"");
-            String riddle = sc.nextLine();
-            if (riddle.equalsIgnoreCase("загадал")) {
-                RiddleNum.programGuess();
-            }
-
+            do {
+                System.out.println("Для выхода введите \"выйти\"");
+                System.out.println("Загадайте число от 0 до 100 ");
+                System.out.println("Как будете готовы напишите \"загадал\"");
+                word = sc.nextLine();
+            } while (!RiddleNum.checkRiddle(word));
+            RiddleNum.programGuess();
         }
     }
+
 
     public static void playTheGames () {
         System.out.println("Предлагаю вам сыграть в две игры");

@@ -4,8 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RiddleNum {
-    private static int min = 0;
-    private static int max = 100;
+    private static  int min = 0;
+    private static  int max = 100;
 
     public static boolean programGuess() {
         Scanner sc = new Scanner(System.in);
@@ -29,14 +29,20 @@ public class RiddleNum {
                     resNum = rnd.nextInt(max - min) + min;
                 } else if (input.equalsIgnoreCase("правильно")) {
                     System.out.println("Система победила! Спасибо за игру человек.");
+                    min = 0;
+                    max = 100;
                     return true;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("Обманывать плохо, твоё число " + resNum);
+                min = 0;
+                max = 100;
                 return true;
             }
-
         }
+    }
+    public static boolean checkRiddle(String word) {
+        return word.equalsIgnoreCase("загадал");
     }
 }
 
