@@ -1,0 +1,7 @@
+
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ÀÕÔ¼8é“Èæ.
+t
+java:S1450"RRemove the "num" field and declare it as a local variable in the relevant methods.(È–£§úÿÿÿÿ8½¢¡í.
+u
+java:S1450"SRemove the "word" field and declare it as a local variable in the relevant methods.(Ïø”ùÿÿÿÿ8í·Áó”.
